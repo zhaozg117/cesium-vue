@@ -1,1 +1,1 @@
-## node version 14.18.0
+node:v14.18.0
