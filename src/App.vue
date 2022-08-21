@@ -58,6 +58,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  color: var(--color-text-primary);
   background-color: #10161b;
 }
 </style>

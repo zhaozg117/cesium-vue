@@ -1,13 +1,21 @@
 <template>
   <div class="cesium-home pr-20 pl-20 pt-20 pb-20">
-    <el-select v-model="mapIndex" @change="changeMap">
-      <el-option
-        v-for="item in options"
-        :key="item.label"
-        :label="item.label"
-        :value="item.value"
-      ></el-option>
-    </el-select>
+    <div class="flex space-between">
+      <el-select v-model="mapIndex" @change="changeMap">
+        <el-option
+          v-for="item in options"
+          :key="item.label"
+          :label="item.label"
+          :value="item.value"
+        ></el-option>
+      </el-select>
+
+      <div class="flex">
+        <el-button @click="drawPoint">drawPoint</el-button>
+        <el-button @click="drawPolylin">drawPolylin</el-button>
+        <el-button @click="drawPolygon">drawPolygon</el-button>
+      </div>
+    </div>
     <div id="cesiumContainer" class="mt-20"></div>
   </div>
 </template>
@@ -16,11 +24,13 @@
 import "cesium/Build/Cesium/Widgets/widgets.css";
 import { Viewer, Cartesian3, ArcGisMapServerImageryProvider } from "cesium";
 const { v4: uuidv4 } = require("uuid");
+import Draw from "./Draw.js";
 export default {
   name: "Home",
   data() {
     return {
       viewer: null,
+      drawer: null,
       mapIndex: 0,
       options: [
         { label: "影像", value: 0 },
@@ -33,6 +43,7 @@ export default {
   mounted() {
     this.initViewer("cesiumContainer");
     this.flyToHome(this.viewer);
+    this.drawer = new Draw(this.viewer);
   },
   beforeDestroy() {
     this.destroy();
@@ -106,6 +117,16 @@ export default {
           break;
       }
       this.viewer.imageryLayers.addImageryProvider(imageryProvider);
+    },
+
+    drawPoint() {
+      this.drawer.drawPointEvent();
+    },
+    drawPolylin() {
+      this.drawer.drawPolyineEvent();
+    },
+    drawPolygon() {
+      this.drawer.drawPolygonEvent();
     },
 
     destroy() {

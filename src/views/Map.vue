@@ -57,7 +57,7 @@ export default {
           pitch: Cesium.Math.toRadians(-90),
           roll: 0.0,
         },
-        duration: 10, // fly time 10s
+        duration: 2, // fly time 10s
       });
     },
 
