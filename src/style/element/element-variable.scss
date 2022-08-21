@@ -1,0 +1,1374 @@
+/**
+ * 源文件 node_modules/element-ui/packages/theme-chalk/src/common/var.scss
+ */
+@charset "UTF-8";
+
+/*----------------> 全局 SCSS 变量 <----------------*/
+
+/* Color
+ -------------------------- */
+/* 全局主色 */
+$--color-primary: $color-primary;
+/* 成功颜色 */
+$--color-success: $color-success;
+/* 警告颜色 */
+$--color-warning: $color-warning;
+/* 危险颜色 */
+$--color-danger: $color-danger;
+/* 主要文字颜色 */
+$--color-text-primary: $color-text-primary;
+/* 常规文字颜色 => 大部分图标颜色 */
+$--color-text-regular: $color-text-regular;
+/* 次要文字颜色 => 文字说明、虚线分割线、选中tab背景颜色 */
+$--color-text-secondary: $color-text-secondary;
+/* 占位文字颜色 => input提示语、文字disable、面板hover背景颜色 */
+$--color-text-placeholder: $color-text-placeholder;
+/* 黑色系 => 黑色分割线 */
+$--color-dark: $color-dark;
+/* 基础白色 */
+$--color-white: $color-white;
+/* 一级边框颜色 => 实线分割线、按钮边框、输入框默认描边色 */
+$--border-color-base: $border-color-base;
+/* 二级边框颜色 */
+$--border-color-light: $border-color-light;
+/* 三级边框颜色 */
+$--border-color-lighter: $border-color-lighter;
+/* 四级边框颜色 */
+$--border-color-extra-light: $border-color-extra-light;
+
+/* Background
+ -------------------------- */
+/* 基础背景颜色 */
+$--background-color-base: $background-color-base;
+/* 基础弹窗背景颜色 */
+$--background-color-dialog: $background-color-dialog;
+/* 基础面板背景颜色 */
+$--background-color-panel: $background-color-panel;
+/* 基础项背景色 */
+$--background-color-item: $background-color-item;
+/* 下拉背景色 */
+$--background-color-item-dark: $background-color-item-dark;
+
+/* Box-shadow
+  -------------------------- */
+/* 阴影 */
+$--box-shadow: $box-shadow;
+
+/* Typography
+ -------------------------- */
+/* 主标题文字大小 */
+$--font-size-extra-large: $font-size-extra-large;
+/* 标题文字大小 */
+$--font-size-large: $font-size-large;
+/* 小标题文字大小 */
+$--font-size-medium: $font-size-medium;
+/* 正文文字大小 */
+$--font-size-base: $font-size-base;
+/* 正文（小）文字大小 */
+$--font-size-small: $font-size-small;
+/* 辅助文字大小 */
+$--font-size-extra-small: $font-size-extra-small;
+/* 主要文字粗细 */
+$--font-weight-primary: $font-weight-primary;
+/* 次要文字粗细 */
+$--font-weight-secondary: $font-weight-secondary;
+/* 主要文字加粗 */
+$--font-weight-primary-bold: $font-weight-primary-bold;
+/* 主要文字行高 */
+$--font-line-height-primary: $font-line-height-primary;
+/* 次要文字行高 */
+$--font-line-height-secondary: $font-line-height-secondary;
+
+/*----------------> 具体组件的 SCSS 变量 <----------------*/
+
+/* Button
+ -------------------------- */
+/* 内间距 横向 */
+$--button-padding-horizontal: 16px;
+/* 内间距 纵向 */
+$--button-padding-vertical: 8px;
+/* mini 内间距 横向 */
+$--button-mini-padding-horizontal: 7px;
+/* mini 内间距 纵向 */
+$--button-mini-padding-vertical: 7px;
+/* 按钮间的外间距 */
+$--button-margin-spacing: 12px;
+/* 默认按钮文字颜色 */
+$--button-default-font-color: #52ffff;
+/* 默认按钮背景颜色 */
+$--button-default-background-color: #19494d;
+/* 默认按钮边框颜色 */
+$--button-default-border-color: #52ffff;
+/* 默认按钮背景边框颜色的透明度 */
+$--button-default-color-opacity: 0.7;
+/* 默认按钮 hover 背景边框颜色的透明度  */
+$--button-default-hover-color-opacity: 1;
+/* 主要按钮文字颜色 */
+$--button-primary-font-color: #181e25;
+/* 主要按钮背景颜色 */
+$--button-primary-background-color: #52ffff;
+/* 主要按钮边框颜色 */
+$--button-primary-border-color: #2cfeff;
+/* 主要按钮背景边框颜色的透明度 */
+$--button-primary-color-opacity: 0.8;
+/* 主要按钮 hover 背景边框颜色的透明度  */
+$--button-primary-hover-color-opacity: 1;
+
+/* 按钮 press 状态颜色 */
+$--button-active-color: #0a9edb;
+/* 按钮禁用透明度 */
+$--button-disabled-opacity: 0.4;
+/* 按钮禁用文字颜色 */
+$--button-disabled-font-color: $--color-text-regular;
+/* 按钮禁用背景颜色 */
+$--button-disabled-background-color: initial;
+/* 按钮禁用边框颜色 */
+$--button-disabled-border-color: $--border-color-base;
+
+/* Popup
+ -------------------------- */
+/* modal-opacity */
+$--popup-modal-opacity: 0.3;
+
+/* MessageBox
+ -------------------------- */
+/* 弹框宽度 */
+$--msgbox-width: 430px;
+/* 标题内间距 */
+$--msgbox-padding-primary: 32px;
+/* 正文文字大小 */
+$--messagebox-content-font-size: $--font-size-base;
+/* 标题下内间距 */
+$--msgbox-padding-primary-bottom: 12px;
+/* el-message-box 下内间距 */
+$--msgbox-padding-bottom: 16px;
+/* 内容内间距 */
+$--msgbox-padding-content: 0 $--msgbox-padding-primary $--msgbox-padding-primary
+  70px;
+/* 标题左图标大小 */
+$--msgbox-title-icon-font-size: 22px;
+
+/* Table
+-------------------------- */
+/* 行的内间距 */
+$--table-row-padding: 15px 0;
+
+/* Dialog
+ -------------------------- */
+/* 背景颜色 */
+$--dialog-background-color: $--background-color-dialog;
+/* 阴影 */
+$--dialog-box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.3);
+/* 外边框颜色 */
+$--dialog-border-color: #62cece;
+/* 默认宽度 */
+$--dialog-width: 900px;
+/* 最大高度 */
+$--dialog-max-height: 80%;
+/* 最小高度 */
+$--dialog-min-height: 220px;
+/* header 内间距 */
+$--dialog-padding-header: 0;
+/* header 行高 */
+$--dialog-header-line-height: $--font-line-height-primary;
+/* title 高度 */
+$--dialog-title-height: 40px;
+/* title 宽度 */
+$--dialog-title-width: 309px;
+/* title 行高 */
+$--dialog-title-line-height: 40px;
+/* body 内间距 */
+$--dialog-body-padding: 24px;
+/* footer 高度 */
+$--dialog-footer-height: 72px;
+/* footer 行高 */
+$--dialog-rooter-line-height: 72px;
+/* footer 内间距 */
+$--dialog-footer-padding: 12px 16px;
+/* 内边框线颜色 */
+$--dialog-inner-border-color: $box-inner-border-color;
+/* Radio
+ -------------------------- */
+/* input 背景颜色 */
+$--radio-input-background-color: initial;
+/* radio 之间的外间距 */
+$--radio-margin-right: 24px;
+/* 按钮样式的内间距 */
+$--radio-button-padding: 8px 20px;
+/* 禁用时 input 边框颜色 */
+$--radio-disabled-input-border-color: $--border-color-base;
+/* 选中禁用时 input 边框颜色 */
+$--radio-disabled-checked-input-border-color: $--border-color-base;
+/* 禁用时 input 填充背景颜色 */
+$--radio-disabled-input-fill: initial;
+/* 选中禁用时 input 填充背景颜色 */
+$--radio-disabled-checked-input-fill: $--color-primary;
+/* 选中禁用时图标背景颜色 */
+$--radio-disabled-checked-icon-color: $--color-white;
+/* 禁用时透明度 */
+$--radio-disabled-opacity: 0.4;
+/* plain 样式的背景颜色 */
+$--radio-plain-background-color: initial;
+/* plain 样式选中时文字颜色 */
+$--radio-plain-checked-font-color: $--color-primary;
+/* secondary 样式的背景颜色 */
+$--radio-secondary-background-color: rgba($--color-primary, 0.25);
+/* secondary 样式的文字颜色 */
+$--radio-secondary-font-color: $--color-primary;
+/* 按钮样式选中时背景色 */
+$--radio-button-checked-background-color: rgba($--color-primary, 0.25);
+/* 按钮样式选中时的文字颜色 */
+$--radio-button-checked-font-color: $--color-text-primary;
+
+/* Switch
+ -------------------------- */
+/* 宽度 */
+$--switch-width: 44px;
+/* 高度 */
+$--switch-height: 22px;
+/* 文字颜色 */
+$--switch-font-color: #fafafa;
+/* 圆角 */
+$--switch-border-radius: 11px;
+/* 关闭时滑块、边框、字体颜色 */
+$--switch-close-color: #8fd2d9;
+/* 打开时滑块、边框、字体颜色 */
+$--switch-open-color: #52ffff;
+/* 关闭时滑槽背景颜色 */
+$--switch-close-background-color: #183036;
+/* 打开时滑槽背景颜色 */
+$--switch-open-background-color: #13393e;
+/* 滑块位置 */
+$--switch-core-position: 2px;
+/* 打开时滑块位置 */
+$--switch-core-open-position-margin-left: -18px;
+/* 禁用时透明度 */
+$--switch-disabled-opacity: 0.4;
+/* 滑槽内的文字大小 */
+$--switch-track-font-size: $--font-size-extra-small;
+/* 滑槽内的文字位置 */
+$--switch-track-position: 8px;
+/* 打开时滑槽内的文字位置 */
+$--switch-track-open-position-margin-left: -($--switch-track-position +
+      $--font-size-extra-small);
+
+/* Checkbox
+ -------------------------- */
+/* 边框 */
+$--checkbox-input-border: 1px solid $--border-color-base;
+/* 背景色 */
+$--checkbox-background-color: initial;
+/* 禁用时透明度 */
+$--checkbox-disabled-opacity: 0.4;
+/* 禁用时文字颜色 */
+$--checkbox-checked-disabled-font-color: $--color-text-regular;
+/* 选中时文字颜色 */
+$--checkbox-checked-font-color: $--color-text-regular;
+/* 禁用时 input 背景颜色 */
+$--checkbox-disabled-input-fill: initial;
+/* 选中禁用时 input 背景颜色 */
+$--checkbox-disabled-checked-input-fill: $--color-primary;
+/* 选中禁用时图标背景颜色 */
+$--checkbox-disabled-checked-icon-color: $--color-white;
+/* 按钮选中时的背景颜色 */
+$--checkbox-button-checked-background-color: rgba(
+  $color: $color-primary,
+  $alpha: 0.2,
+);
+/* 按钮选中时的文字颜色 */
+$--checkbox-button-checked-font-color: $--color-primary;
+/* 按钮选中时的边框颜色 */
+$--checkbox-button-checked-border-color: $--color-primary;
+/* label与input的左内间距 */
+$--checkbox-label-padding-left: 8px;
+/* radio 间的外间距 */
+$--checkbox-margin-right: 24px;
+/* 按钮样式的内间距 */
+$--checkbox-button-padding: 8px 20px;
+
+/* Form
+ -------------------------- */
+/* 行高 */
+$--form-item-line-height: 32px;
+/* label内间距 */
+$--form-item-label-padding: 0px 8px 0px 0px;
+
+/* Input
+ -------------------------- */
+/* 文字颜色 */
+$--input-font-color: $--color-text-primary;
+/* 高度 */
+$--input-height: 32px;
+/* 鼠标悬浮边框颜色 */
+$--input-hover-border: $--color-primary;
+/* 背景颜色 */
+$--input-background-color: initial;
+/* 禁用时文字颜色 */
+$--input-disabled-color: $--color-text-primary;
+/* 禁用时透明度 */
+$--input-disabled-opacity: 0.4;
+/* 禁用时背景颜色 */
+$--input-disabled-fill: initial;
+/* 禁用时边框颜色 */
+$--input-disabled-border: $--border-color-base;
+/* 复合型输入框内间距 */
+$--input-group-padding: 0px 16px;
+/* 复合型输入框最小宽度 */
+$--input-group-min-width: 100px;
+/* 调整下拉框外间距以保证复合型输入框的下拉框聚焦时正常显示边框 */
+$--input-group-select-margin: -1px -16px;
+/* input内间距 */
+$--input-padding: 0 10px;
+/* input-textarea内间距 */
+$--input-textarea-padding: 5px 10px;
+/* InputNumber
+ -------------------------- */
+/* 宽度 */
+$--input-number-width: 144px;
+/* 内间距 */
+$--input-number-padding: 0 42px 0 10px;
+/* 增减按钮背景颜色 */
+$--input-number-button-fill: $--background-color-item;
+
+/* Select
+ -------------------------- */
+/* 悬浮时边框颜色 */
+$--select-border-color-hover: $--color-primary;
+/* 下拉框边框颜色 */
+$--select-dropdown-border: 1px solid $--border-color-base;
+/* 选项悬浮时背景颜色 */
+$--select-option-hover-background: $--background-color-item;
+/* 选项组的标题颜色 */
+$--select-group-color: $--color-text-secondary;
+/* 选项的内间距 */
+$--select-option-padding: 0px 16px;
+/* 选项组的每组内间距 */
+$--select-group-warp-padding: 0px 0px 14px 0px;
+/* 选项组的标题内间距 */
+$--select-group-title-padding: 0px 0px 0px 16px;
+/* 选项组的分割线下定位 */
+$--select-group-warp-divider-bottom: 6px;
+/* 选项组的分割线左定位 */
+$--select-group-warp-divider-left: 16px;
+/* 多选 tag 文字颜色 */
+$--select-multiple-font-color: $--color-text-regular;
+/* 多选 tag 背景颜色 */
+$--select-multiple-background-color: $--background-color-item;
+/* 多选 tag 边框颜色 */
+$--select-multiple-border-color: $--border-color-base;
+/* 多选 tag 删除按钮文字颜色 */
+$--select-multiple-delete-icon-color: $--color-text-secondary;
+/* 多选 tag 删除按钮背景颜色 */
+$--select-multiple-delete-background-color: initial;
+/* 多选 tag 删除按钮悬浮文字颜色 */
+$--select-multiple-delete-icon-hover-color: $--color-text-regular;
+/* 添加新增内容按钮边框颜色 */
+$--select-add-text-border-color: $--border-color-base;
+
+/* Dropdown
+ -------------------------- */
+/* 选项悬浮时背景颜色 */
+$--dropdown-menuItem-hover-fill: $--background-color-item;
+/* 选项悬浮时文字颜色 */
+$--dropdown-menuItem-hover-color: $--color-text-primary;
+/* 下拉选项框最小宽度 */
+$--dropdown-menu-min-width: 100px;
+/* 下拉选项框边框颜色 */
+$--dropdown-menu-border-color: $--border-color-base;
+/* 选项的内间距 */
+$--dropdown-menu-option-padding: 0px 16px;
+/* 选项的行高 */
+$--dropdown-menu-option-line-height: 32px;
+
+/* Cascader
+ -------------------------- */
+/* input文字颜色 */
+$--cascader-menu-input-color: $--color-text-primary;
+/* 选项悬浮时背景颜色 */
+$--cascader-node-background-hover: $--background-color-item;
+/* 每项的文字粗细 */
+$--cascader-font-weight: $--font-weight-primary;
+
+/* TimePicker
+ --------------------------*/
+/* 底部高度 */
+$--timepicker-footer-height: 40px;
+/* 底部文字大小 */
+$--timepicker-footer-font-size: $--font-size-base;
+
+/* DatePicker
+ -------------------------- */
+/* 外部边框颜色 */
+$--datepicker-border-color: $--border-color-base;
+/* 内部边框颜色 */
+$--datepicker-inner-border-color: $--border-color-base;
+/* 选项悬浮时文字颜色 */
+$--datepicker-hover-font-color: $color-text-primary;
+/* 选中区间每项的背景颜色 */
+$--datepicker-inrange-background-color: $--background-color-item;
+/* 选中区间悬浮时每项的背景颜色 */
+$--datepicker-inrange-hover-background-color: $--border-color-base;
+
+/* Popover
+ -------------------------- */
+/* 小箭头边框颜色 */
+$--popover-border-color: $--border-color-base;
+
+/* Collapse
+ --------------------------*/
+/* item 项文字颜色 */
+$--collapse-color: $--color-text-regular;
+/* item 项 hover 文字颜色 */
+$--collapse-color-hover: $--color-text-primary;
+/* item 选中项文字颜色 */
+$--collapse-color-active: $--color-text-primary;
+
+/* Slider
+ --------------------------*/
+/* 滑槽背景颜色 */
+$--slider-runway-background-color: $--border-color-base;
+/* 禁用时透明度 */
+$--slider-disabled-opacity: 0.4;
+/* 禁用时主背景颜色 */
+$--slider-disable-color: $--color-primary;
+/* 按钮背景颜色 */
+$--slider-button-background-color: #fff;
+
+/* Upload
+ -------------------------- */
+/* 文件列表项悬浮时的背景颜色 */
+$--upload-list-item-hover-background-color: $--background-color-item;
+
+/* Table
+ -------------------------- */
+/* 表头文字颜色 */
+$--table-header-font-color: $--color-text-primary;
+/* 表格行 hover 时背景颜色 */
+$--table-row-hover-background-color: $--background-color-item;
+/* 表头字体权重 */
+$--table-thead-font-weight: $--font-weight-primary-bold;
+
+/* Tag
+ -------------------------- */
+/* 文字大小 */
+$--tag-font-size: $--font-size-base;
+
+/* Upload
+ -------------------------- */
+/* 拖拽上传的背景色 */
+$--upload-dragger-background-color: $--background-color-panel;
+/* 拖拽上传的边框颜色 */
+$--upload-dragger-border-color: $--border-color-base;
+/* 拖拽上传 hover 文字颜色 */
+$--upload-dragger-hover-color: $--color-text-primary;
+
+/* Loading
+ -------------------------- */
+/* 背景颜色 */
+$--loading-background-color: rgba($--background-color-dialog, 0.75);
+
+$--tooltip-arrow-size: 10px;
+
+/*----------------> 引入 theme-chalk <----------------*/
+
+/* 改变 icon 字体路径变量，必需 */
+// TOOD
+$--font-path: "~element-ui/lib/theme-chalk/fonts";
+@import "../../../node_modules/element-ui/packages/theme-chalk/src/index";
+
+/*----------------> 修改样式 <----------------*/
+
+/* Button
+  -------------------------- */
+/* 按钮的间距 */
+.el-button + .el-button {
+  margin-left: $--button-margin-spacing;
+}
+
+/* 默认按钮 hover 状态，排除 message-box 中的底部按钮组 */
+.el-button--default:hover:not(.el-button--primary),
+.el-button--default:focus:not(.el-button--primary),
+.el-button--default:active:not(.el-button--primary) {
+  color: $--button-default-font-color;
+  border-color: rgba(
+    $color: $--button-default-border-color,
+    $alpha: $--button-default-hover-color-opacity
+  );
+  background-color: rgba(
+    $color: $--button-default-background-color,
+    $alpha: $--button-default-hover-color-opacity
+  );
+}
+
+/* 默认按钮  背景颜色、边框颜色、字体颜色*/
+.el-button--default {
+  color: $--button-default-font-color;
+  border-color: rgba(
+    $color: $--button-default-border-color,
+    $alpha: $--button-default-color-opacity
+  );
+  background-color: rgba(
+    $color: $--button-default-background-color,
+    $alpha: $--button-default-color-opacity
+  );
+}
+
+/* 主要按钮 hover 背景颜色、边框颜色、字体颜色 */
+.el-button--primary:hover,
+.el-button--primary:focus,
+.el-button--primary:active {
+  color: $--button-primary-font-color;
+  border-color: rgba(
+    $color: $--button-primary-border-color,
+    $alpha: $--button-primary-hover-color-opacity
+  );
+  background-color: rgba(
+    $color: $--button-primary-background-color,
+    $alpha: $--button-primary-hover-color-opacity
+  );
+}
+
+/* 主要按钮 背景颜色、边框颜色、字体颜色 */
+.el-button--primary {
+  color: $--button-primary-font-color;
+  border-color: rgba(
+    $color: $--button-primary-border-color,
+    $alpha: $--button-primary-color-opacity
+  );
+  background-color: rgba(
+    $color: $--button-primary-background-color,
+    $alpha: $--button-primary-color-opacity
+  );
+}
+
+/* 主要按钮 字体加粗 */
+.el-button--primary {
+  font-weight: bold;
+}
+
+/* 按钮 disabled 状态透明度 */
+.el-button.is-disabled,
+.el-button.is-disabled:hover,
+.el-button.is-disabled:focus,
+.el-button.is-disabled:active,
+.el-button.is-loading {
+  opacity: $--button-disabled-opacity;
+}
+
+/* 主要按钮 disabled 状态 */
+.el-button--primary.is-disabled,
+.el-button--primary.is-disabled:hover,
+.el-button--primary.is-disabled:focus,
+.el-button--primary.is-disabled:active {
+  border-color: $--button-primary-border-color;
+  background-color: $--button-primary-background-color;
+}
+
+/* 文本按钮 disabled 状态 */
+.el-button--text.is-disabled,
+.el-button--text.is-disabled:hover,
+.el-button--text.is-disabled:focus,
+.el-button--text.is-disabled:active {
+  color: $--color-primary;
+}
+
+/* 加载中按钮 primary 文字颜色 */
+.el-button--primary.is-loading {
+  color: $--color-text-primary;
+}
+
+/* 加载中按钮 disabled 状态 */
+.el-button--primary.is-loading::before,
+.el-button--default.is-loading::before {
+  display: none;
+}
+
+/* Button
+   添加size=large尺寸的按钮
+  -------------------------- */
+.el-button--large {
+  font-size: 14px;
+  padding: 12px 16px;
+}
+
+/* Popup
+  -------------------------- */
+
+/* MessageBox
+  -------------------------- */
+/* 边框 */
+.el-message-box {
+  border: none;
+}
+
+/* 标题下内间距 */
+.el-message-box__header {
+  padding-bottom: $--msgbox-padding-primary-bottom;
+}
+
+/* el-message-box 下内间距 */
+.el-message-box {
+  padding-bottom: $--msgbox-padding-bottom;
+}
+
+/* 内容内间距 */
+.el-message-box__content {
+  padding: $--msgbox-padding-content;
+}
+
+/* alert 标题左图标 info，confirm 标题左图标 question */
+.el-message-box__title.el-icon-info,
+.el-message-box__title.el-icon-question {
+  // 清除 span 间隔
+  font-size: 0;
+
+  &::before {
+    font-size: $--msgbox-title-icon-font-size;
+    color: $--color-primary;
+  }
+
+  & > span {
+    // 清除span间隔、和图标对齐
+    font-size: $--font-size-large;
+    padding-left: $--msgbox-padding-bottom;
+    vertical-align: text-bottom;
+  }
+}
+
+/* Dialog
+  -------------------------- */
+/* 弹出区域居中显示 */
+.el-dialog__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 主内容占满剩下空间，弹出区域内容高于页面的80%，出现滚动条 */
+.el-dialog {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto !important;
+
+  .el-dialog__body {
+    overflow-y: auto;
+    flex: 1;
+  }
+}
+
+/* 背景颜色 */
+.el-dialog {
+  background-color: $--background-color-dialog;
+}
+
+/* 默认宽度 */
+.el-dialog {
+  width: $--dialog-width;
+}
+
+/* 最大高度 */
+// .el-dialog {
+//   max-height: $--dialog-max-height;
+// }
+/* 边框和边框阴影 */
+.el-dialog {
+  border: 1px solid $--dialog-border-color;
+  box-shadow: $--dialog-box-shadow;
+}
+
+/* 最小高度 */
+.el-dialog {
+  min-height: $--dialog-min-height;
+}
+
+/* header 内间距 */
+.el-dialog__header {
+  padding: $--dialog-padding-header;
+}
+
+/* header 行高 */
+.el-dialog__header {
+  line-height: $--dialog-header-line-height;
+}
+
+/* title 自定义样式 */
+.el-dialog__title {
+  line-height: $--dialog-title-line-height;
+  line-height: $--dialog-title-line-height;
+  width: $--dialog-title-width;
+  height: $--dialog-title-height;
+}
+
+.el-dialog__title {
+  font-family: PingFang SC;
+  font-size: 14px;
+  font-weight: bold;
+  position: relative;
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+  text-align: center;
+  color: #2cfeff;
+  border: 1px solid #2cfeff;
+  background: linear-gradient(
+    360deg,
+    rgba(44, 254, 255, 0.19) 0%,
+    rgba(44, 254, 255, 0.3) 0%,
+    rgba(44, 254, 255, 0) 100%
+  );
+}
+
+.el-dialog__title:before,
+.el-dialog__title:after {
+  position: absolute;
+  top: -1px;
+  width: $--dialog-title-height;
+  height: $--dialog-title-height;
+  content: "";
+  background-color: $--background-color-dialog;
+}
+
+.el-dialog__title:before {
+  left: -21px;
+  transform: skew(45deg);
+  border-right: 2px solid #2cfeff;
+}
+
+.el-dialog__title:after {
+  right: -21px;
+  transform: skew(-45deg);
+  border-left: 2px solid #2cfeff;
+}
+
+/* body 文字行高 */
+.el-dialog__body {
+  line-height: $--font-line-height-primary;
+}
+
+/* body 内间距 */
+.el-dialog__body {
+  padding: $--dialog-body-padding;
+}
+
+/* footer 上边框线 */
+.el-dialog__footer {
+  border-top: 1px solid $--dialog-inner-border-color;
+}
+
+/* footer 内边距*/
+.el-dialog__footer {
+  padding: 0;
+}
+
+/* footer 高度和行高*/
+.el-dialog__footer {
+  line-height: $--dialog-rooter-line-height;
+  height: $--dialog-footer-height;
+}
+
+/* close 关闭icon的颜色*/
+.el-dialog__headerbtn .el-dialog__close {
+  color: #1b797d;
+}
+
+/* Radio
+  -------------------------- */
+/* 行高 */
+.el-radio,
+.el-radio__input {
+  line-height: $--font-line-height-primary;
+}
+
+/* 按钮样式的内间距 */
+.el-radio-button__inner {
+  padding: $--radio-button-padding;
+}
+
+/* radio 之间的外间距 */
+.el-radio {
+  margin-right: $--radio-margin-right;
+}
+
+/* 禁用时透明度 */
+.el-radio.is-disabled,
+.el-radio-button.is-disabled {
+  opacity: $--radio-disabled-opacity;
+}
+
+/* plain 样式的背景颜色 */
+.el-radio-button__inner.is-plain {
+  background-color: $--radio-plain-background-color;
+}
+
+/* plain 样式选中时背景颜色 */
+.el-radio-button__orig-radio:checked + .el-radio-button__inner.is-plain {
+  background-color: $--radio-plain-background-color;
+}
+
+/* plain 样式选中时文字颜色 */
+.el-radio-button__orig-radio:checked + .el-radio-button__inner.is-plain {
+  color: $--radio-plain-checked-font-color;
+}
+
+/* secondary 样式选中时背景颜色 */
+.el-radio-button__orig-radio:checked + .el-radio-button__inner.is-secondary {
+  background-color: $--radio-secondary-background-color;
+}
+
+/* secondary 样式选中时文字颜色 */
+.el-radio-button__orig-radio:checked + .el-radio-button__inner.is-secondary {
+  color: $--radio-secondary-font-color;
+}
+
+/* el-tooltip
+  -------------------------- */
+.el-tooltip__popper.is-dark {
+  color: #62cece;
+  background: #1a6467;
+}
+
+.el-tooltip__popper.is-light {
+  max-width: 300px;
+  background: #fff;
+}
+
+// 三角形样式
+.el-tooltip__popper.is-light[x-placement^="bottom"] .popper__arrow {
+  border-right-color: #1a6467;
+}
+
+.el-tooltip__popper[x-placement^="top"] .popper__arrow {
+  border-top-color: #1a6467;
+
+  &::after {
+    border-top-color: #1a6467;
+  }
+}
+
+/* Switch
+  -------------------------- */
+/* 文字颜色 */
+.el-switch__core {
+  color: $--switch-font-color;
+}
+
+/* 圆角 */
+.el-switch__core {
+  border-radius: $--switch-border-radius;
+}
+
+/* 关闭时滑槽背景颜色 */
+.el-switch__core {
+  border-color: $--switch-close-color;
+  background-color: $--switch-close-background-color;
+}
+
+/* 打开时滑槽背景颜色 */
+.el-switch.is-checked .el-switch__core {
+  border-color: $--switch-open-color;
+  background-color: $--switch-open-background-color;
+}
+
+/* 打开时滑块位置 */
+.el-switch.is-checked .el-switch__core::after {
+  margin-left: $--switch-core-open-position-margin-left;
+}
+
+/* 禁用时透明度 */
+.el-switch.is-disabled {
+  opacity: $--switch-disabled-opacity;
+}
+
+/* 关闭时滑块颜色 */
+.el-switch__core::after {
+  background-color: $--switch-close-color;
+}
+
+/* 滑块打开时得颜色 */
+.el-switch.is-checked .el-switch__core::after {
+  background-color: $--switch-open-color;
+}
+
+/* 滑块位置 */
+.el-switch__core::after {
+  top: $--switch-core-position;
+  left: $--switch-core-position;
+}
+
+/* 滑槽内的文字 */
+.el-switch .el-switch__core::before {
+  position: absolute;
+  top: 0;
+  display: block;
+  height: 100%;
+  content: attr(data-text);
+  transition: all 0.3s;
+}
+
+/* 滑槽内的文字大小 */
+.el-switch .el-switch__core {
+  font-size: $--switch-track-font-size;
+}
+
+/* 滑槽内的文字位置和文字颜色 */
+.el-switch .el-switch__core::before {
+  right: $--switch-track-position;
+  color: #8fd2d9;
+}
+
+/* 打开时滑槽内的文字位置和文字颜色 */
+.el-switch.is-checked .el-switch__core::before {
+  right: 100%;
+  margin-right: $--switch-track-open-position-margin-left;
+  color: #52ffff;
+}
+
+/* Checkbox
+  -------------------------- */
+/* 禁用时透明度 */
+.el-checkbox.is-disabled {
+  opacity: $--checkbox-disabled-opacity;
+}
+
+/* 禁用时文字颜色 */
+.el-checkbox__input.is-disabled + span.el-checkbox__label {
+  color: $--checkbox-checked-disabled-font-color;
+}
+
+/* 行高 */
+.el-checkbox__label {
+  line-height: $--font-line-height-primary;
+}
+
+/* label 与 input 的左内间距 */
+.el-checkbox__label {
+  padding-left: $--checkbox-label-padding-left;
+}
+
+/* radio 间的外间距 */
+.el-checkbox {
+  margin-right: $--checkbox-margin-right;
+}
+
+/* 按钮样式的内间距 */
+.el-checkbox-button__inner {
+  padding: $--checkbox-button-padding;
+}
+
+/* 多选按钮组，取消选择时,按钮聚焦边框颜色 */
+.el-checkbox-group {
+  .el-checkbox-button.is-focus:not(.is-checked) {
+    .el-checkbox-button__inner {
+      border-color: $--border-color-base;
+    }
+  }
+}
+
+/* Form
+  -------------------------- */
+/* label 行高 */
+.el-form-item__label {
+  line-height: $--form-item-line-height;
+}
+
+/* label 文字粗细 */
+.el-form-item__label {
+  font-weight: $--font-weight-primary;
+}
+
+/* content 行高 */
+.el-form-item__content {
+  line-height: $--form-item-line-height;
+}
+
+/* label 内间距 */
+.el-form-item__label {
+  padding: $--form-item-label-padding;
+}
+
+/* el-form-item的label自带“：”，除了.no-colon类 */
+.el-form,
+.el-form-item {
+  .el-form-item__label {
+    &::after {
+      content: "：";
+    }
+  }
+
+  &.no-colon {
+    .el-form-item__label {
+      &::after {
+        content: "";
+      }
+    }
+  }
+}
+
+/* Input
+  -------------------------- */
+/* 禁用时透明度 */
+.el-input.is-disabled {
+  opacity: $--input-disabled-opacity;
+}
+
+/* 复合型输入框内间距 */
+.el-input-group__append,
+.el-input-group__prepend {
+  padding: $--input-group-padding;
+}
+
+/* 复合型输入框背景颜色 */
+.el-input-group__append,
+.el-input-group__prepend {
+  background-color: initial;
+}
+
+/* 复合型输入框最小宽度 */
+.el-input-group__prepend div.el-select .el-input__inner,
+.el-input-group__append div.el-select .el-input__inner {
+  min-width: $--input-group-min-width;
+}
+
+/* 调整下拉框外间距以保证复合型输入框的下拉框聚焦时正常显示边框 */
+.el-input-group__prepend div.el-select,
+.el-input-group__append div.el-select {
+  margin: $--input-group-select-margin;
+}
+
+/* input内间距 */
+.el-input__inner {
+  padding: $--input-padding;
+}
+
+/* textarea内间距 */
+.el-textarea__inner {
+  padding: $--input-textarea-padding;
+}
+
+/* InputNumber
+  -------------------------- */
+/* 宽度 */
+.el-input-number {
+  width: $--input-number-width;
+}
+
+/* 内间距 */
+.el-input-number.is-controls-right .el-input__inner {
+  padding: $--input-number-padding;
+}
+
+/* 文本对其方向 */
+.el-input-number .el-input__inner {
+  text-align: left;
+}
+
+/* 增减按钮背景颜色 */
+.el-input-number__increase,
+.el-input-number__decrease {
+  background-color: $--input-number-button-fill;
+}
+
+/* Select
+  -------------------------- */
+/* 选项选中时的文字粗细 */
+.el-select-dropdown__item.selected {
+  font-weight: $--font-weight-primary;
+}
+
+/* 选项的内间距 */
+.el-select-dropdown__item {
+  padding: $--select-option-padding;
+}
+
+/* 选项组的选项内间距 */
+.el-select-group .el-select-dropdown__item {
+  padding: $--select-option-padding;
+}
+
+/* 选项组的每组内间距 */
+.el-select-group__wrap:not(:last-of-type) {
+  padding: $--select-group-warp-padding;
+}
+
+/* 选项组的标题内间距 */
+.el-select-group__title {
+  padding: $--select-group-title-padding;
+}
+
+/* 选项组的分割线定位*/
+.el-select-group__wrap:not(:last-of-type)::after {
+  right: $--select-group-warp-divider-left;
+  bottom: $--select-group-warp-divider-bottom;
+  left: $--select-group-warp-divider-left;
+}
+
+/* 多选 tag 文字颜色 */
+.el-select .el-tag.el-tag--info {
+  color: $--select-multiple-font-color;
+}
+
+/* 多选 tag 背景颜色 */
+.el-select .el-tag.el-tag--info {
+  background-color: $--select-multiple-background-color;
+}
+
+/* 多选 tag 边框颜色 */
+.el-select .el-tag.el-tag--info {
+  border-color: $--select-multiple-border-color;
+}
+
+/* 多选 tag 删除按钮文字颜色 */
+.el-select .el-tag__close.el-icon-close {
+  color: $--select-multiple-delete-icon-color;
+}
+
+/* 多选 tag 删除按钮背景颜色 */
+.el-select .el-tag__close.el-icon-close {
+  background-color: $--select-multiple-delete-background-color;
+}
+
+/* 多选 tag 删除按钮悬浮文字颜色 */
+.el-select .el-tag__close.el-icon-close:hover {
+  color: $--select-multiple-delete-icon-hover-color;
+}
+
+/* 多选 tag 删除按钮悬浮背景颜色 */
+.el-select .el-tag__close.el-icon-close:hover {
+  background-color: $--select-multiple-delete-background-color;
+}
+
+/* 添加新增内容按钮边框颜色 */
+.el-select-dropdown .el-select-dropdown__item .select-add-text {
+  height: 100%;
+  border-top: 1px solid $--select-add-text-border-color;
+}
+
+/* Dropdown
+  -------------------------- */
+/* 下拉选项框最小宽度 */
+.el-dropdown-menu {
+  min-width: $--dropdown-menu-min-width;
+}
+
+/* 下拉选项框边框颜色 */
+.el-dropdown-menu {
+  border-color: $--border-color-base;
+}
+
+/* 选项的内间距 */
+.el-dropdown-menu__item {
+  padding: $--dropdown-menu-option-padding;
+}
+
+/* 选项的行高 */
+.el-dropdown-menu__item {
+  line-height: $--dropdown-menu-option-line-height;
+}
+
+/* 选项hover颜色 */
+.el-dropdown-menu__item:not(.is-disabled):hover,
+.el-dropdown-menu__item:focus {
+  background-color: $--background-color-item-dark;
+}
+
+/* Cascader
+  -------------------------- */
+/* 每项的文字粗细 */
+.el-cascader-node.in-active-path,
+.el-cascader-node.is-selectable.in-checked-path,
+.el-cascader-node.is-active {
+  font-weight: $--cascader-font-weight;
+}
+
+/* TimePicker
+  --------------------------*/
+/* 底部高度 */
+.el-time-panel__footer {
+  height: $--timepicker-footer-height;
+}
+
+/* 底部行高 */
+.el-time-panel__footer {
+  // 上下内间距 4px
+  line-height: ($--timepicker-footer-height - 4 * 2);
+}
+
+/* 底部文字大小 */
+.el-time-panel__btn {
+  font-size: $--timepicker-footer-font-size;
+}
+
+/* 确认按钮文字粗细 */
+.el-time-panel__btn.confirm {
+  font-weight: $--font-weight-primary;
+}
+
+/* 开始结束时间盘选中区上下分割线边框颜色 */
+.el-time-range-picker__body.el-time-panel__content::after,
+.el-time-range-picker__body.el-time-panel__content::before {
+  top: 55%;
+}
+
+/* 时间盘选中区上下分割线边框颜色 */
+.el-time-panel__content::after,
+.el-time-panel__content::before {
+  border-color: $--border-color-base;
+}
+
+/* 每项悬浮时背景颜色 */
+.el-time-spinner__item:hover:not(.disabled):not(.active) {
+  background-color: $--background-color-item;
+}
+
+/* DatePicker
+  -------------------------- */
+/* 分隔符文字颜色 */
+.el-date-editor .el-range-separator {
+  color: $--color-text-regular;
+}
+
+/* 分割符行高 */
+.el-date-editor .el-range-separator {
+  line-height: $--font-line-height-primary;
+}
+
+/* fix：分割符宽度 */
+.el-date-editor .el-range-separator {
+  box-sizing: initial;
+}
+
+/* 输入框背景颜色 */
+.el-date-editor .el-range-input {
+  background-color: initial;
+}
+
+/* 图标行高 */
+.el-date-editor .el-input__icon {
+  line-height: $--font-line-height-primary;
+}
+
+/* fix：右图标定位 */
+.el-date-editor .el-input__icon.el-range__close-icon {
+  margin-right: -5px;
+}
+
+/* 日期选择器周期栏边框颜色 */
+.el-date-table th {
+  border-color: $--border-color-base;
+}
+
+/* 选中时文字颜色 */
+.el-date-table td.start-date div,
+.el-date-table td.end-date div,
+.el-date-table td.current:not(.disabled) span {
+  color: $--color-text-primary;
+}
+
+/* Popover
+  -------------------------- */
+
+/* Collapse
+  --------------------------*/
+/* item 项文字颜色 */
+.el-tabs__item {
+  color: $--collapse-color;
+}
+
+/* item 项 hover 文字颜色 */
+.el-tabs__item:hover {
+  color: $--collapse-color-hover;
+}
+
+/* item 选中项文字颜色 */
+.el-tabs__item.is-active {
+  color: $--collapse-color-active;
+}
+
+/* Slider
+  --------------------------*/
+/* 按钮背景颜色 */
+.el-slider__button {
+  background-color: $--slider-button-background-color;
+}
+
+/* 禁用时透明度 */
+.el-slider__runway.disabled {
+  opacity: $--slider-disabled-opacity;
+}
+
+/* Upload
+ -------------------------- */
+/* 文件列表项悬浮时的背景颜色 */
+.el-upload-list__item:hover {
+  background-color: $--upload-list-item-hover-background-color;
+}
+
+/* Table
+-------------------------- */
+/* 行的内间距 */
+.el-table th,
+.el-table td {
+  padding: $--table-row-padding;
+}
+
+/* 页头文字粗细 */
+.el-table th {
+  font-weight: $--table-thead-font-weight;
+}
+
+/* small-table字体大小 */
+.el-table--small {
+  font-size: $--font-size-base;
+}
+
+/* 页头文字粗细 */
+.el-table th {
+  font-weight: $--table-thead-font-weight;
+  background-color: $--background-color-item;
+}
+
+/* Tag
+ -------------------------- */
+/* 边框颜色 */
+.el-tag {
+  line-height: 28px;
+  height: 28px;
+  border-color: $--color-primary;
+}
+
+/* Upload
+ -------------------------- */
+/* 拖拽上传的背景色 */
+.el-upload-dragger {
+  background-color: $--upload-dragger-background-color;
+}
+
+/* 拖拽上传的边框颜色 */
+.el-upload-dragger {
+  border-color: $--upload-dragger-border-color;
+}
+
+/* 拖拽上传 hover 文字颜色 */
+.el-upload-dragger:hover {
+  color: $--upload-dragger-hover-color;
+}
+
+/* Loading
+ -------------------------- */
+/* 背景颜色 */
+.el-loading-mask {
+  background-color: $--loading-background-color;
+  backdrop-filter: blur(1px);
+}
+
+/* Breadcrumb
+-------------------------- */
+.el-breadcrumb {
+  line-height: 40px;
+}
+
+.el-breadcrumb__inner,
+.el-breadcrumb__inner a {
+  font-weight: 400;
+  color: $--color-text-secondary;
+}

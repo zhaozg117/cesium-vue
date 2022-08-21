@@ -1,0 +1,42 @@
+@for $i from 1 through 10 {
+  .w-#{$i * 2} {
+    width: $i * 2px;
+  }
+  .font-size-#{$i * 2} {
+    font-size: $i * 2px;
+  }
+}
+
+$names: (
+  mt: margin-top,
+  mr: margin-right,
+  mb: margin-bottom,
+  ml: margin-left,
+  pt: padding-top,
+  pr: padding-right,
+  pb: padding-bottom,
+  pl: padding-left,
+);
+
+@each $key, $name in $names {
+  @for $i from 1 through 10 {
+    .#{$key}-#{$i * 2} {
+      #{$name}: $i * 2px;
+    }
+  }
+}
+.w-180 {
+  width: 180px;
+}
+
+.w-360 {
+  width: 360px;
+}
+// 表单搜索框长度
+.w-220 {
+  width: 220px;
+}
+
+.flow-root {
+  display: flow-root;
+}

@@ -1,0 +1,104 @@
+@charset "UTF-8";
+
+/* 还没有根据主题定义变量的属性
+-------------------------- */
+/* tag 背景颜色 */
+$--background-color-tag: rgba(
+  $color: $color-primary,
+  $alpha: 0.1
+);
+
+/* tab 选中背景色 */
+$--background-color-tab-active: $color-primary;
+
+:root {
+  --background-color-tab-active: #{$--background-color-tab-active};
+  --background-color-tag: #{$--background-color-tag};
+  --header-hover-background-color: rgba(255, 255, 255, 0.3);
+  /* 图谱右键菜单颜色 */
+  --sectorMenuColor: #{$sectorMenuColor};
+  --sectorMenuHoverColor: #{$sectorMenuHoverColor};
+}
+
+/*----------------> 全局通用变量 <----------------*/
+
+:root {
+  /* Color
+  -------------------------- */
+  /* 全局主色 */
+  --color-primary: #{$color-primary};
+  /* 成功颜色 */
+  --color-success: #{$color-success};
+  /* 警告颜色 */
+  --color-warning: #{$color-warning};
+  /* 危险颜色*/
+  --color-danger: #{$color-danger};
+  /* 主要文字颜色 */
+  --color-text-primary: #{$color-text-primary};
+  /* 常规文字颜色 => 大部分图标颜色 */
+  --color-text-regular: #{$color-text-regular};
+  /* 次要文字颜色 => 文字说明、虚线分割线 */
+  --color-text-secondary: #{$color-text-secondary};
+  /* 占位文字颜色 => input提示语 */
+  --color-text-placeholder: #{$color-text-placeholder};
+  /* 黑色系 => 黑色分割线 */
+  --color-dark: #{$color-dark};
+  /* 基础白色 */
+  --color-white: #{$color-white};
+  /* 基础背景颜色 */
+  --background-color-base: #{$background-color-base};
+  /* 基础背景色，light */
+  --background-color-light: #{$background-color-light};
+  /* 基础弹窗背景颜色 */
+  --background-color-dialog: #{$background-color-dialog};
+  /* 基础弹窗背景颜色，dark */
+  --background-color-dialog-dark: #{$background-color-dialog-dark};
+  /* 基础面板背景颜色 */
+  --background-color-panel: #{$background-color-panel};
+  /* 基础面板背景颜色，light */
+  --background-color-panel-light: #{$background-color-panel-light};
+  /* 基础项背景色 */
+  --background-color-item: #{$background-color-item};
+  /* 下拉背景色 */
+  --background-color-item-dark: #{$background-color-item-dark};
+  /* 基础项背景色，light */
+  --background-color-item-light: #{$background-color-item-light};
+  /* 一级边框颜色 => 实线分割线、按钮边框、输入框默认描边色 */
+  --border-color-base: #{$border-color-base};
+  /* 二级边框颜色 */
+  --border-color-light: #{$border-color-light};
+  /* 三级边框颜色 */
+  --border-color-lighter: #{$border-color-lighter};
+  /* 四级边框颜色 */
+  --border-color-extra-light: #{$border-color-extra-light};
+
+  /* Typography
+  -------------------------- */
+  /* 主标题文字大小 */
+  --font-size-extra-large: #{$font-size-extra-large};
+  /* 标题文字大小 */
+  --font-size-large: #{$font-size-large};
+  /* 小标题文字大小 */
+  --font-size-medium: #{$font-size-medium};
+  /* 正文文字大小 */
+  --font-size-base: #{$font-size-base};
+  /* 正文（小）文字大小 */
+  --font-size-small: #{$font-size-small};
+  /* 辅助文字大小 */
+  --font-size-extra-small: #{$font-size-extra-small};
+  /* 主要文字粗细 */
+  --font-weight-primary: #{$font-weight-primary};
+  /* 次要文字粗细 */
+  --font-weight-secondary: #{$font-weight-secondary};
+  /* 主要文字加粗 */
+  --font-weight-primary-bold: #{$font-weight-primary-bold};
+  /* 主要文字行高 */
+  --font-line-height-primary: #{$font-line-height-primary};
+  /* 次要文字行高 */
+  --font-line-height-secondary: #{$font-line-height-secondary};
+
+  /* Box-shadow
+  -------------------------- */
+  /* 阴影 */
+  --box-shadow: #{$--box-shadow};
+}

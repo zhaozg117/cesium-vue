@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+/* 滚动条
+-------------------------- */
+/* 滚动条凹槽的颜色，还可以设置边框属性 */
+::-webkit-scrollbar-track {
+  background-color: rgba($color: $color-scrollbar-track-dark, $alpha: 0.6);
+}
+
+/* 滚动条的宽度、高度，对应竖滚动条、横滚动条 */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+/* 滚动条的小方格 */
+::-webkit-scrollbar-corner {
+  background-color: $color-scrollbar-dark;
+}
+/* 滚动条的滑块 */
+::-webkit-scrollbar-thumb {
+  background-color: $color-scrollbar-dark;
+  border-radius: 3px;
+}
+
+/* 滚动条悬浮 */
+::-webkit-scrollbar-thumb :hover {
+  background-color: $color-scrollbar-dark;
+}
