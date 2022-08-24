@@ -104,15 +104,6 @@ export default {
       let handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
       switch (type) {
         case "point":
-          // 监听鼠标左键
-          handler.setInputAction(function(movement) {
-            // 从相机位置通过windowPosition 世界坐标中的像素创建一条射线。返回Cartesian3射线的位置和方向。
-            let ray = viewer.camera.getPickRay(movement.position);
-            // 查找射线与渲染的地球表面之间的交点。射线必须以世界坐标给出。返回Cartesian3对象
-            position = viewer.scene.globe.pick(ray, viewer.scene);
-            let point = that.drawPoint(position);
-            tempEntities.push(point);
-          }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
           // 左键双击停止绘制
           handler.setInputAction(function() {
             handler.destroy(); //关闭事件句柄
@@ -125,30 +116,6 @@ export default {
           }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
           break;
         case "polyline":
-          //鼠标移动事件
-          handler.setInputAction(function(e) {
-            const entity = that.viewer.scene.pick(e.endPosition);
-            if (entity && entity.id) {
-              that.preEntity = entity.id;
-              console.log("*****entity:", entity.id.polyline.material);
-
-              entity.id.polyline.material = new Cesium.PolylineGlowMaterialProperty(
-                {
-                  color: Cesium.Color.GREEN,
-                }
-              );
-            } else {
-              if (!that.preEntity) {
-                return false;
-              }
-
-              that.preEntity.polyline.material = new Cesium.PolylineGlowMaterialProperty(
-                {
-                  color: Cesium.Color.GOLD,
-                }
-              );
-            }
-          }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
           //左键点击操作
           handler.setInputAction(function(click) {
             //调用获取位置信息的接口

@@ -11,9 +11,11 @@
       </el-select>
 
       <div class="flex">
-        <el-button @click="drawPoint">drawPoint</el-button>
-        <el-button @click="drawPolylin">drawPolylin</el-button>
-        <el-button @click="drawPolygon">drawPolygon</el-button>
+        <el-button @click="addImagery">添加图层</el-button>
+        <el-button @click="remove">移除图层</el-button>
+        <el-button @click="drawPoint">绘制点</el-button>
+        <el-button @click="drawPolylin">绘制线</el-button>
+        <el-button @click="drawPolygon">绘制面</el-button>
       </div>
     </div>
     <div id="cesiumContainer" class="mt-20"></div>
@@ -22,7 +24,12 @@
 
 <script>
 import "cesium/Build/Cesium/Widgets/widgets.css";
-import { Viewer, Cartesian3, ArcGisMapServerImageryProvider } from "cesium";
+import {
+  Viewer,
+  Cartesian3,
+  ArcGisMapServerImageryProvider,
+  WebMapServiceImageryProvider,
+} from "cesium";
 const { v4: uuidv4 } = require("uuid");
 import Draw from "./Draw.js";
 export default {
@@ -127,6 +134,33 @@ export default {
     },
     drawPolygon() {
       this.drawer.drawPolygonEvent();
+    },
+
+    /**
+     * 叠加图层
+     */
+    addImagery() {
+      var layer = this.viewer.imageryLayers.addImageryProvider(
+        new Cesium.WebMapTileServiceImageryProvider({
+          url:
+            "http://t0.tianditu.com/vec_w/wmts?service=wmts&request=GetTile&version=1.0.0&LAYER=vec&tileMatrixSet=w&TileMatrix={TileMatrix}&TileRow={TileRow}&TileCol={TileCol}&style=default&format=tiles&tk=30d07720fa76f07732d83c748bb84211",
+          layer: "tdtBasicLayer",
+          style: "default",
+          format: "image/jpeg",
+          tileMatrixSetID: "GoogleMapsCompatible",
+        })
+      );
+
+      layer.alpha = 0.5;
+
+      console.log(layer, this.viewer.imageryLayers.length);
+    },
+
+    remove() {
+      const layer = this.viewer.imageryLayers.get(1);
+      // layer.show = false;
+      console.log("getImagery:", layer);
+      this.viewer.imageryLayers.remove(layer);
     },
 
     destroy() {

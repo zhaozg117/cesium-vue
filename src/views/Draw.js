@@ -13,7 +13,18 @@ class Drawer {
   }
 
   initHandler() {
+    this.viewer.scene.globe.depthTestAgainstTerrain = true;
     this.handler = new ScreenSpaceEventHandler(this.viewer.canvas);
+  }
+
+  //解除鼠标事件
+  unRegisterEvents() {
+    this.handler.removeInputAction(Cesium.ScreenSpaceEventType.RIGHT_CLICK);
+    this.handler.removeInputAction(Cesium.ScreenSpaceEventType.LEFT_CLICK);
+    this.handler.removeInputAction(Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+    this.handler.removeInputAction(
+      Cesium.ScreenSpaceEventType.LEFT_DOUBLE_CLICK
+    );
   }
 
   drawPointEvent() {
@@ -45,62 +56,60 @@ class Drawer {
     //右键点击操作
     handler.setInputAction((click) => {
       tempPoints = [];
-      handler.destroy(); //关闭事件句柄
-      handler = null;
+      this.unRegisterEvents();
+      // handler.destroy(); //关闭事件句柄
+      // this.handler = handler = null;
     }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
   }
 
   drawPolyineEvent() {
+    const _this = this;
     if (!this.handler) this.initHandler();
-    let { handler, viewer } = this;
-    let tempEntities = this.tempEntities;
-    let position = [];
-    let tempPoints = [];
-    /*   handler.setInputAction(function(e) {
-      const entity = viewer.scene.pick(e.endPosition);
-      if (this.preEntity && this.preEntity.polyline) {
-        this.preEntity.polyline.material = new Cesium.PolylineGlowMaterialProperty(
-          {
-            color: Cesium.Color.GOLD,
-          }
-        );
-      }
+    let { handler, viewer } = _this;
+    let posList = [];
+    let line = null;
 
-      if (!entity || entity.id) return false;
-      entity.id.polyline.material = new Cesium.PolylineGlowMaterialProperty({
-        color: Cesium.Color.GREEN,
-      });
-      this.preEntity = entity.id;
-    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE); */
     //左键点击操作
-    handler.setInputAction((click) => {
-      //调用获取位置信息的接口
-      let ray = viewer.camera.getPickRay(click.position);
-      position = viewer.scene.globe.pick(ray, viewer.scene);
-      tempPoints.push(position);
-      let tempLength = tempPoints.length;
-      //调用绘制点的接口
-      let point = this.drawPoint(tempPoints[tempPoints.length - 1]);
-      tempEntities.push(point);
-      if (tempLength > 1) {
-        let pointline = this.drawPolyline([
-          tempPoints[tempPoints.length - 2],
-          tempPoints[tempPoints.length - 1],
-        ]);
-        tempEntities.push(pointline);
-      } else {
-        // tooltip.innerHTML = "请绘制下一个点，右键结束";
+    handler.setInputAction((event) => {
+      //获取世界坐标点
+      let pick = viewer.camera.getPickRay(event.position);
+      let cartesian = viewer.scene.globe.pick(pick, viewer.scene);
+      posList.push(cartesian);
+
+      if (!line) {
+        line = viewer.entities.add({
+          polyline: {
+            positions: new Cesium.CallbackProperty(function() {
+              return posList;
+            }, false),
+            width: 3,
+            material: Cesium.Color.RED,
+            clampToGround: true,
+          },
+        });
       }
     }, Cesium.ScreenSpaceEventType.LEFT_CLICK);
+
+    handler.setInputAction(function(event) {
+      //获取世界坐标点
+      let pick = viewer.camera.getPickRay(event.endPosition);
+      let cartesian = viewer.scene.globe.pick(pick, viewer.scene);
+
+      if (line) {
+        //考虑在鼠标移动的一瞬间,linearr应该增加一个坐标点,当再次移动时,该坐标点应该更换
+        posList[posList.length - 1] = cartesian;
+      }
+    }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
     //右键点击操作
     handler.setInputAction((click) => {
-      tempPoints = [];
-      handler.destroy(); //关闭事件句柄
-      handler = null;
+      // posList = [];
+      this.unRegisterEvents();
     }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
   }
 
   drawPolygonEvent() {
+    const _this = this;
     let { handler, viewer } = this;
     let tempEntities = this.tempEntities;
     let position = [];
@@ -117,10 +126,10 @@ class Drawer {
       tempPoints.push(position);
       let tempLength = tempPoints.length;
       //调用绘制点的接口
-      let point = this.drawPoint(position);
+      let point = _this.drawPoint(position);
       tempEntities.push(point);
       if (tempLength > 1) {
-        let pointline = this.drawPolyline([
+        let pointline = _this.drawPolyline([
           tempPoints[tempPoints.length - 2],
           tempPoints[tempPoints.length - 1],
         ]);
@@ -150,7 +159,7 @@ class Drawer {
           this.drawPolygon(tempPoints);
           tempEntities.push(tempPoints);
           handler.destroy(); //关闭事件句柄
-          handler = null;
+          this.handler = handler = null;
         }
       }
     }, Cesium.ScreenSpaceEventType.RIGHT_CLICK);
